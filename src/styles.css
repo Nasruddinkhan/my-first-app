@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.card {
+  border: 1px solid #BBB !important;
+  box-shadow: rgba(32, 33, 36, 0.28) 0px 1px 6px 0px;
+}
+.card-header {
+  background-color: #63c2de !important;
+  border-bottom: unset !important;
+  color:white;
+}

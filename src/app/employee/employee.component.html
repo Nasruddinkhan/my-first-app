@@ -1,4 +1,14 @@
-<p>employee works!</p>
+<input type="text"   [(ngModel)]="name"  [disabled]="isDisable"/>
+   <button type="button" (click)="addData(name)">Add</button>
+   <div *ngIf="isUserAddeddStatus;else notcreted"
+       [ngStyle]="{color: getColor()}"
 
-<input type="text" [(ngModel)]="name">
-{{name}}
+      >
+   <div   [ngClass]="{add : isUserAddeddStatus}" *ngFor="let na of nameList; let i = index">{{i}} User was added user name is {{na}}
+
+   </div>
+
+   </div>
+  <ng-template #notcreted>
+        <p [ngStyle]="{color: getColor()}"> User is not added </p>
+</ng-template>

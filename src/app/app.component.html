@@ -1,9 +1,63 @@
-<h1>{{title|uppercase}}</h1>
-<app-employee></app-employee>
-<app-employee></app-employee>
-<app-employee></app-employee>
-<app-employee></app-employee>
-<app-employee ></app-employee>
+<div class="container">
 
-
-
+  <div class="card">
+    <div class="card-header">User Forms</div>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" >
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="email">First Name:</label>
+            <input type="email" class="form-control" #firstName1="ngModel" required [(ngModel)]="firstName" placeholder="Enter FirstName" name="firstName">
+          <div *ngIf="!firstName1.valid && firstName1.touched" style="color: red;">
+            First Name is requried
+          </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="email">Middle Name:</label>
+            <input type="email" class="form-control" id="email"  #middleName1="ngModel"  required  [(ngModel)]="middleName" placeholder="Enter email" name="middleName">
+            <div *ngIf="!middleName1.valid && middleName1.touched" style="color: red;">
+              Middle Name is requried
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="email">last Name:</label>
+            <input type="email" class="form-control" id="email"  #lastName1="ngModel"  required  [(ngModel)]="lastName" placeholder="Enter email" name="lastName">
+            <div *ngIf="!lastName1.valid && lastName1.touched" style="color: red;">
+              Last Name is requried
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="email">Mobile Number:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="email">Pan Number:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+        </div>
+        <p>{{userForm.value|json}}</p>
+      </div>
+    </div>
+    <div class="card-footer">
+     <button type="submit" [disabled]="!userForm.valid" class="btn btn-sm btn-success">Save</button>
+    </div>
+  </form>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app test';
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  onSubmit(form: NgForm) {
+    if (!form.valid ) {
+      return;
+    }
+    console.table(JSON.stringify(form.value));
+  }
 }
